@@ -9,7 +9,7 @@ Execute `./gradlew clean build`. Your jar will be located at `./build/libs` with
 Now you can run:
 
 ```shell
-java -jar advent-of-code-all.jar
+java -jar adventofcode-all.jar
 ```
 
 ## Or, build with Docker
