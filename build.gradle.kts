@@ -22,7 +22,7 @@ tasks.test {
 }
 tasks.jar {
   isZip64 = true
-  manifest.attributes("Main-Class" to "AppKt")
+  manifest.attributes("Main-Class" to "com.adventofcode.2021.AppKt")
 }
 tasks.shadowJar {
   minimize()

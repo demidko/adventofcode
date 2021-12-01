@@ -1,4 +1,4 @@
-package com.adventofcode.year2021
+package com.adventofcode.`2021`
 
 import org.junit.jupiter.api.Disabled
 import org.junit.jupiter.api.Test
