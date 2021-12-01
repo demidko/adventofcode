@@ -1,4 +1,4 @@
-package com.adventofcode.`2021`.`1`
+package com.adventofcode.`2021`.`1`.`1`
 
 fun Sonar?.next(data: String): Sonar {
   val newValue = data.toLong()
