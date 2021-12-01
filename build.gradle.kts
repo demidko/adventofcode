@@ -7,21 +7,15 @@ plugins {
   id("com.github.johnrengelman.shadow") version "7.1.0"
 }
 dependencies {
-  implementation("io.ktor:ktor-server-netty:1.6.5")
-  implementation("io.ktor:ktor-freemarker:1.6.5")
-  implementation("io.ktor:ktor-client-cio:1.6.5")
-  implementation("ch.qos.logback:logback-classic:1.2.7")
   testImplementation("org.junit.jupiter:junit-jupiter:5.8.1")
   testImplementation("com.willowtreeapps.assertk:assertk-jvm:0.25")
   testImplementation("io.mockk:mockk:1.12.0")
 }
 tasks.compileKotlin {
   kotlinOptions.jvmTarget = "17"
-  kotlinOptions.freeCompilerArgs += "-Xopt-in=kotlin.time.ExperimentalTime"
 }
 tasks.compileTestKotlin {
   kotlinOptions.jvmTarget = "17"
-  kotlinOptions.freeCompilerArgs += "-Xopt-in=kotlin.time.ExperimentalTime"
 }
 tasks.test {
   useJUnitPlatform()
