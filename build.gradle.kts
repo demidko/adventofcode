@@ -14,7 +14,7 @@ tasks.compileTestKotlin {
 }
 tasks.jar {
   isZip64 = true
-  manifest.attributes("Main-Class" to "com.adventofcode.2021.AppKt")
+  manifest.attributes("Main-Class" to "com.adventofcode.year2021.AppKt")
 }
 tasks.shadowJar {
   minimize()
