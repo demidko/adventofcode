@@ -6,3 +6,11 @@ fun day(dayNumber: Int, parseLine: String.() -> Unit) {
     .reader()
     .forEachLine(parseLine)
 }
+
+
+fun day(dayNumber: Int): List<String> {
+  return {}::class.java
+    .getResourceAsStream("$dayNumber.input")!!
+    .reader()
+    .readLines()
+}
