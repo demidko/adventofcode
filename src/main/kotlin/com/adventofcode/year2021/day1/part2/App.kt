@@ -1,5 +1,6 @@
 package com.adventofcode.year2021.day1.part2
 
+import com.adventofcode.year2021.day
 import java.util.concurrent.atomic.AtomicLong
 
 private class Sonar {
@@ -23,13 +24,12 @@ private class Sonar {
 }
 
 
-fun solve0102() {
+fun main() {
   val sonar = Sonar()
   val counter = AtomicLong()
-  val resource = "/com/adventofcode/year2021/0102.input"
-  Sonar::class.java.getResourceAsStream(resource)!!.reader().forEachLine {
-    it.toLong().let(sonar::appendMeasurement)
-    if(sonar.checkIncreased()) {
+  day(1) {
+    toLong().let(sonar::appendMeasurement)
+    if (sonar.checkIncreased()) {
       counter.incrementAndGet()
     }
   }

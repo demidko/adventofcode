@@ -1,6 +1,6 @@
 package com.adventofcode.year2021.day2.part2
 
-import com.adventofcode.year2021.readDay
+import com.adventofcode.year2021.day
 
 class Submarine {
   private var aim = 0
@@ -25,9 +25,9 @@ class Submarine {
   }
 }
 
-fun solveDay2Part2() {
+fun main() {
   val submarine = Submarine()
-  readDay(2) {
+  day(2) {
     val (command, x) = split(" ")
     when (command) {
       "up" -> submarine up x.toInt()
@@ -36,8 +36,4 @@ fun solveDay2Part2() {
     }
   }
   println(submarine.multiplication())
-}
-
-private fun main() {
-  solveDay2Part2()
 }

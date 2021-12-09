@@ -1,5 +1,6 @@
 package com.adventofcode.year2021.day2.part1
 
+import com.adventofcode.year2021.day
 import com.adventofcode.year2021.day2.part1.Command.valueOf
 import java.util.concurrent.atomic.AtomicReference
 
@@ -28,11 +29,10 @@ enum class Command {
 }
 
 
-fun solveDay2Part1() {
-  val resource = "/com/adventofcode/year2021/0201.input"
+fun main() {
   val submarine = AtomicReference(Submarine(0, 0))
-  Submarine::class.java.getResourceAsStream(resource)!!.reader().forEachLine {
-    val (command, update) = it.split(" ")
+  day(2) {
+    val (command, update) = split(" ")
     valueOf(command)
       .calculate(submarine.get(), update.toLong())
       .let(submarine::set)

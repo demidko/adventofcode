@@ -1,5 +1,6 @@
 package com.adventofcode.year2021.day1.part1
 
+import com.adventofcode.year2021.day
 import java.util.concurrent.atomic.AtomicReference
 
 private fun Sonar?.next(data: String): Sonar {
@@ -13,11 +14,10 @@ private fun Sonar?.next(data: String): Sonar {
 
 private class Sonar(val oldValue: Long, val incrementCounter: Long = 0)
 
-fun solve0101() {
-  val resource = "/com/adventofcode/year2021/0101.input"
+fun main() {
   val sonar = AtomicReference<Sonar>()
-  Sonar::class.java.getResourceAsStream(resource)!!.reader().forEachLine {
-    sonar.get().next(it).let(sonar::set)
+  day(1) {
+    sonar.get().next(this).let(sonar::set)
   }
   println("Day 1, Part One: ${sonar.get().incrementCounter}")
 }

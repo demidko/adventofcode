@@ -1,6 +1,6 @@
 package com.adventofcode.year2021.day3.part1
 
-import com.adventofcode.year2021.readDay
+import com.adventofcode.year2021.day
 import java.math.BigInteger
 
 /**
@@ -64,8 +64,8 @@ class PowerCalculator(private val columnsCount: Int) {
  * [Day 3 Part 1](https://adventofcode.com/2021/day/3)
  */
 fun main() {
-  val calculator = PowerCalculator(5)
-  readDay(3) {
+  val calculator = PowerCalculator(12)
+  day(3) {
     let(calculator::collectBits)
   }
   println(calculator.calculatePower())
