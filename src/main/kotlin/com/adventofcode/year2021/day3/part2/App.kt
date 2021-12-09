@@ -16,15 +16,13 @@ fun List<String>.leastCommonBit(column: Int): Char {
   }
 }
 
-fun List<String>.filterBy(detectBitCriteria: List<String>.(Int) -> Char): String {
-  for (column in 0 until first().length) {
-    val bitCriteria = detectBitCriteria(column)
-    val foundedNumbers = filter { it[column] == bitCriteria }
-    if (foundedNumbers.size == 1) {
-      return foundedNumbers.first()
-    }
+tailrec fun List<String>.filterBy(detectBitCriteria: List<String>.(Int) -> Char, column: Int = 0): String {
+  val bitCriteria = detectBitCriteria(column)
+  val foundedNumbers = filter { it[column] == bitCriteria }
+  return when (foundedNumbers.size > 1) {
+    true -> foundedNumbers.filterBy(detectBitCriteria, column + 1)
+    else -> foundedNumbers.first()
   }
-  error("Number not found!")
 }
 
 
